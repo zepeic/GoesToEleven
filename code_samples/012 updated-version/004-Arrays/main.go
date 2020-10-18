@@ -3,5 +3,15 @@ package main
 import "fmt"
 
 func main() {
-	fmt.Println("This is a test to see if the github works with my laptop or not ")
+	//X := type {values} // composite literal
+	x := []int{4, 5, 7, 8, 42}
+	fmt.Println(len(x))
+	fmt.Println(x[1])
+	fmt.Println(x)
+	fmt.Println(x[1:])
+	fmt.Println(x[1:3])
+
+	for i := 0; i <= 4; i++ {
+		fmt.Println(i, x[i])
+	}
 }
