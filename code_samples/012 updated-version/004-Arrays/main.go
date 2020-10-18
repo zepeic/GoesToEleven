@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 func main() {
-	var x []int
+	fmt.Println("This is a test to see if the github works with my laptop or not ")
 }
