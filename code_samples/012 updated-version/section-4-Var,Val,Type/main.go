@@ -2,11 +2,17 @@ package main
 
 import "fmt"
 
+const (
+	_ = iota
+	// kb = 1024
+	kb = 1 << (iota * 10)
+	mb = 1 << (iota * 10)
+	gb = 1 << (iota * 10)
+)
+
 func main() {
-	x := 42
-	y := 42.6262626
-	fmt.Println(x)
-	fmt.Println(y)
-	fmt.Printf("%T\n", x)
-	fmt.Printf("%T\n", y)
+
+	fmt.Printf("%d\t\t\t%b\n", kb, kb)
+	fmt.Printf("%d\t\t\t%b\n", mb, mb)
+	fmt.Printf("%d\t\t\t%b\n", gb, gb)
 }
