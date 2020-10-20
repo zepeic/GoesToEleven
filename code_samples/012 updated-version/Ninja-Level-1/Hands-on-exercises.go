@@ -2,19 +2,15 @@ package main
 
 import "fmt"
 
-type mytype int
+type hotdog int
 
-var y int
-var x mytype
+const (
+	x        = 2
+	y string = "James Bond"
+	z        = true
+)
 
 func main() {
-	fmt.Println(x)
-	fmt.Printf("%T\n", x)
-	x = 42
-	fmt.Printf("%T\n", x)
-	fmt.Println(x)
-	y = int(x)
-	fmt.Printf("%T\n", y)
-	fmt.Println(y)
+	fmt.Println(x, y, z)
 
 }
