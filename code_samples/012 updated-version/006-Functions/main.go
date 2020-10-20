@@ -2,49 +2,28 @@ package main
 
 import "fmt"
 
-type person struct {
-	first string
-	last  string
-}
-type secretAgent struct {
-	person
-	ltk bool
-}
-type human interface {
-	speak()
-}
-
-// func (r reciever) identifier(paremeters) (return(s)) {code....}
-
-func (s secretAgent) speak() {
-	fmt.Println("I am", s.first, s.last)
-
-}
-
 func main() {
-	sa1 := secretAgent{
-		person: person{
-			first: "James",
-			last:  "Bond",
-		},
-		ltk: true,
+	fmt.Println("Hello, playground")
+	f := func(x int) {
+		fmt.Println("The year big brother started watching:", x)
 	}
+	s1 := foo()
+	fmt.Println(s1)
+	f(1984)
+	s2 := bar()
+	fmt.Printf("%T\n", s2)
+	i := s2()
+	fmt.Println(i)
+}
 
-	sa2 := secretAgent{
-		person: person{
-			first: "Miss",
-			last:  "Moneypenny",
-		},
+func foo() string {
+	s := "hello world"
+	return s
 
-		ltk: true,
+}
+
+func bar() func() int {
+	return func() int {
+		return 451
 	}
-	p1 := person{
-		first: "Dr.",
-		last:  "No",
-	}
-	fmt.Println(sa1)
-	sa1.speak()
-	fmt.Println(sa2)
-	sa2.speak()
-	fmt.Println(p1)
 }
