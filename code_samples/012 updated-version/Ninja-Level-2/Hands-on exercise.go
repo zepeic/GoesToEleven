@@ -3,12 +3,8 @@ package main
 import "fmt"
 
 func main() {
-	for i := 65; i < 90; i++ {
-		fmt.Println(i)
-		for j := 0; j < 3; j++ {
-			fmt.Printf("\t%#U\n", i)
-		}
-
-	}
-
+	var x int = 42
+	fmt.Printf("%d\t%b\t%#x\n", x, x, x)
+	x = x << 1
+	fmt.Printf("%d\t%b\t%#x", x, x, x)
 }
