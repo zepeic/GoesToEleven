@@ -3,27 +3,36 @@ package main
 import "fmt"
 
 func main() {
-	fmt.Println("Hello, playground")
-	f := func(x int) {
-		fmt.Println("The year big brother started watching:", x)
-	}
-	s1 := foo()
-	fmt.Println(s1)
-	f(1984)
-	s2 := bar()
-	fmt.Printf("%T\n", s2)
-	i := s2()
-	fmt.Println(i)
+	ii := []int{1, 2, 3, 4, 5, 6, 7, 8, 9}
+	s := sum(ii...)
+	fmt.Println(s)
 }
 
-func foo() string {
-	s := "hello world"
-	return s
+func sum(xi ...int) int {
+	total := 0
+	fmt.Printf("%T\n", xi)
+	for _, v := range xi {
+		total += v
+	}
+	return total
+}
+func even(f func(xi ...int) int, vi ...int) int {
+	var yi []int
+	for _, v := range vi {
+		if v%2 == 0 {
+			yi = append(yi, v)
+		}
+	}
+	return f(yi...)
 
 }
 
-func bar() func() int {
-	return func() int {
-		return 451
+func odd(f func(xi ...int) int, vi ...int) int {
+	var yi []int
+	for _, v := range vi {
+		if v%2 == 1 {
+			yi = append(yi, v)
+		}
 	}
+	return f(yi...)
 }
