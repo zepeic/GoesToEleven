@@ -3,16 +3,15 @@ package main
 import "fmt"
 
 func main() {
-	p1 := struct {
-		first string
-		last  string
-		age   int
-	}{
-		first: "James",
-		last:  "Bond",
-		age:   32,
-	}
+	a := foo()
+	b, c := bar()
+	fmt.Println(a, b, c)
+}
+func foo() int {
+	return 42
+}
 
-	fmt.Println(p1)
+func bar() (int, string) {
+	return 1942, "Big Brother is watching you"
 
 }
