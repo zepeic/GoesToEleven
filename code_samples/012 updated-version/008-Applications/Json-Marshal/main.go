@@ -5,30 +5,34 @@ import (
 	"fmt"
 )
 
-type bot struct {
-	Shopify bool
-	Fs      bool
-	Ys      bool
+type person struct {
+	First string
+	Last  string
+	Age   int
 }
 
 func main() {
-	b1 := bot{
-		Shopify: false,
-		Fs:      true,
-		Ys:      true,
+	p1 := person{
+		First: "James",
+		Last:  "Bond",
+		Age:   32,
 	}
-	b2 := bot{
-		Shopify: true,
-		Fs:      true,
-		Ys:      false,
+
+	p2 := person{
+		First: "Miss",
+		Last:  "Moneypenny",
+		Age:   27,
 	}
-	bots := []bot{
-		b1,
-		b2,
+
+	people := []person{
+		p1,
+		p2,
 	}
-	bs, err := json.Marshal(bots)
+
+	bs, err := json.Marshal(people)
 	if err != nil {
 		fmt.Println(err)
 	}
+
 	fmt.Println(string(bs))
 }
